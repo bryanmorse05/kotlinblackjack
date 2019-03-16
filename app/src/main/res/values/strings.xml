@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">KotlinBlackjack</string>
+    <string name="stay_button">Stay</string>
+    <string name="hit_button">Hit</string>
+    <string name="split_button">Split</string>
+    <string name="double_down_button">Double</string>
+    <string name="dealer_text">Dealer</string>
+    <string name="player_text">Player</string>
+    <string name="deal_text">Deal</string>
+</resources>

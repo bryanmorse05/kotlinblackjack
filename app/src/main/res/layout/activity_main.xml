@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorCasinoGreen"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:id="@+id/dealerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dealer_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+            android:id="@+id/dealerHandValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="0"/>
+
+    <ImageView
+            android:id="@+id/dealerFirstCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/dealerSecondCard"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <ImageView
+            android:id="@+id/dealerSecondCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/dealerFirstCard"
+            app:layout_constraintRight_toLeftOf="@id/dealerThirdCard"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <ImageView
+            android:id="@+id/dealerThirdCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/dealerSecondCard"
+            app:layout_constraintRight_toLeftOf="@id/dealerFourthCard"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <ImageView
+            android:id="@+id/dealerFourthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/dealerThirdCard"
+            app:layout_constraintRight_toLeftOf="@id/dealerFifthCard"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <ImageView
+            android:id="@+id/dealerFifthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/dealerFourthCard"
+            app:layout_constraintRight_toLeftOf="@id/dealerSixthCard"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <ImageView
+            android:id="@+id/dealerSixthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/dealerFifthCard"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dealerTitle"/>
+
+    <TextView
+            android:id="@+id/playerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/player_text"
+            app:layout_constraintTop_toBottomOf="@id/dealerFirstCard"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/playerHandValue"/>
+
+    <TextView
+            android:id="@+id/playerHandValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/playerTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="0"/>
+
+    <ImageView
+            android:id="@+id/playerFirstCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/playerSecondCard"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <ImageView
+            android:id="@+id/playerSecondCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerFirstCard"
+            app:layout_constraintRight_toLeftOf="@id/playerThirdCard"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <ImageView
+            android:id="@+id/playerThirdCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSecondCard"
+            app:layout_constraintRight_toLeftOf="@id/playerFourthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <ImageView
+            android:id="@+id/playerFourthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerThirdCard"
+            app:layout_constraintRight_toLeftOf="@id/playerFifthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <ImageView
+            android:id="@+id/playerFifthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerFourthCard"
+            app:layout_constraintRight_toLeftOf="@id/playerSixthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <ImageView
+            android:id="@+id/playerSixthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerFifthCard"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <Button
+            android:id="@+id/hitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hit_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/stayButton"
+            android:layout_marginBottom="80sp"/>
+
+    <Button
+            android:id="@+id/stayButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stay_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/hitButton"
+            app:layout_constraintRight_toLeftOf="@id/doubleDownButton"
+            android:layout_marginBottom="80sp"/>
+
+    <Button
+            android:id="@+id/doubleDownButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/double_down_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/stayButton"
+            app:layout_constraintRight_toLeftOf="@id/splitButton"
+            android:layout_marginBottom="80sp"/>
+
+    <Button
+            android:id="@+id/splitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/split_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/doubleDownButton"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="80sp"/>
+
+</android.support.constraint.ConstraintLayout>
