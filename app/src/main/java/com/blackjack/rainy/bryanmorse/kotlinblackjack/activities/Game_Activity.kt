@@ -1,12 +1,16 @@
-package com.blackjack.rainy.bryanmorse.kotlinblackjack
+package com.blackjack.rainy.bryanmorse.kotlinblackjack.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.blackjack.rainy.bryanmorse.kotlinblackjack.models.Cards
+import com.blackjack.rainy.bryanmorse.kotlinblackjack.R
+import com.blackjack.rainy.bryanmorse.kotlinblackjack.utilities.showBagels
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class Game_Activity : AppCompatActivity() {
 
-    var deckOfCards: List<Cards> = Cards.Deck.cards
+    var deckOfCards: List<Cards> =
+        Cards.Deck.cards
     var dealerCurrentHandValue: Int = 0     //The Dealer's current hand value
     var playerCurrentHandValue: Int = 0     //The Player's current hand value
     var carPos: Int = 0                     //Current position in the array
@@ -88,6 +92,12 @@ class MainActivity : AppCompatActivity() {
         //Display Player hand value
         playerHandValue.text = "$playerCurrentHandValue"    //That $ converts it to string
 
+        //Check for Split
+        if (deckOfCards[carPos].name.equals(deckOfCards[carPos--].name)) {
+            splitButton.isClickable = true
+            splitButton.text = getString(R.string.split_button)
+        }
+
         //Display the first Dealer card
         dealerFirstCard.setImageResource(deckOfCards[carPos].image)
         dealerCurrentHandValue = deckOfCards[carPos].value
@@ -95,8 +105,11 @@ class MainActivity : AppCompatActivity() {
         dealerHandValue.text = "$dealerCurrentHandValue"
 
         //Check to see if Blackjack
+        if (playerCurrentHandValue == 21) {
+            endgame(playerCurrentHandValue, dealerCurrentHandValue, true)
+        }
 
-        //Check for Split
+
 
         //Player hits
         hitButton.setOnClickListener {
@@ -119,7 +132,8 @@ class MainActivity : AppCompatActivity() {
             cardToDealToPlayer++
             playerHandValue.text = "$playerCurrentHandValue"
             if (playerCurrentHandValue > 21) {
-                busted(0)
+//                busted(0)
+                endgame(playerCurrentHandValue, dealerCurrentHandValue, false)
             }
         }
 
@@ -130,9 +144,11 @@ class MainActivity : AppCompatActivity() {
             carPos++
             playerHandValue.text = "$playerCurrentHandValue"
             if (playerCurrentHandValue > 21) {
-                busted(0)
+                endgame(playerCurrentHandValue, dealerCurrentHandValue, false)
             }
-            dealerTurn()
+            else {
+                dealerTurn()
+            }
         }
 
         //Player Stays
@@ -166,32 +182,22 @@ class MainActivity : AppCompatActivity() {
         dealerHandValue.text = "$dealerCurrentHandValue"
 
         if (dealerCurrentHandValue > 21) {
-            busted(1)
+            endgame(playerCurrentHandValue, dealerCurrentHandValue, false)
         } else {
-            determineWinner(
-                playerCurrentHandValue,
-                dealerCurrentHandValue
-            )   //if dealer doesn't bust, then it's time to determine the winner!
+          //if dealer doesn't bust, then it's time to determine the winner!
+            endgame(playerCurrentHandValue, dealerCurrentHandValue, false)
         }
     }
 
-    private fun busted(who: Int) {
-
-        //who 0 = Player, 1 = Dealer
-        when (who) {
-            0 -> showBagels("Player Bust")
-            1 -> showBagels("Dealer Bust")
-        }
-
-        deactivateButtons()
-    }
-
-    private fun determineWinner(player: Int, dealer: Int) {
-
+    private fun endgame(player: Int, dealer: Int, blackjack: Boolean) {
         when {
-            player > dealer -> showBagels("Player is the winner!")
-            player < dealer -> showBagels("Dealer is the winner")
-            player == dealer -> showBagels("Game ends in a draw")
+            blackjack -> showBagels("BLACKJACK!")
+            player > 21 -> showBagels("Player Bust")
+            dealer > 21 -> showBagels("Dealer Bust")
+            player > dealer -> showBagels("Player Wins!")
+            dealer > player -> showBagels("Dealer unfortunately wins")
+            player == dealer -> showBagels("Game ends in a tie")
+            else -> showBagels("Something went wrong")
         }
 
         deactivateButtons()

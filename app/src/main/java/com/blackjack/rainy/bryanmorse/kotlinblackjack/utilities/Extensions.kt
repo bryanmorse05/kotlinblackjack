@@ -1,4 +1,4 @@
-package com.blackjack.rainy.bryanmorse.kotlinblackjack
+package com.blackjack.rainy.bryanmorse.kotlinblackjack.utilities
 
 import android.content.Context
 import android.widget.Toast
