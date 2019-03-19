@@ -18,12 +18,14 @@
             app:layout_constraintRight_toRightOf="parent"/>
 
     <TextView
-            android:id="@+id/dealerHandValue"
+            android:id="@+id/txtDealerHandValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:text="0"/>
+
+    <!-- Dealer Cards -->
 
     <ImageView
             android:id="@+id/dealerFirstCard"
@@ -80,15 +82,17 @@
             android:text="@string/player_text"
             app:layout_constraintTop_toBottomOf="@id/dealerFirstCard"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/playerHandValue"/>
+            app:layout_constraintRight_toLeftOf="@id/txtPlayerHandValue"/>
 
     <TextView
-            android:id="@+id/playerHandValue"
+            android:id="@+id/txtPlayerHandValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@id/playerTitle"
             app:layout_constraintRight_toRightOf="parent"
             android:text="0"/>
+
+    <!-- Player Cards -->
 
     <ImageView
             android:id="@+id/playerFirstCard"
@@ -137,6 +141,58 @@
             app:layout_constraintLeft_toRightOf="@id/playerFifthCard"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/playerTitle"/>
+
+    <!-- Player 2nd Row of Cards for a split -->
+
+    <ImageView
+            android:id="@+id/playerSplitFirstCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/playerSplitSecondCard"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <ImageView
+            android:id="@+id/playerSplitSecondCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSplitFirstCard"
+            app:layout_constraintRight_toLeftOf="@id/playerSplitThirdCard"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <ImageView
+            android:id="@+id/playerSplitThirdCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSplitSecondCard"
+            app:layout_constraintRight_toLeftOf="@id/playerSplitFourthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <ImageView
+            android:id="@+id/playerSplitFourthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSplitThirdCard"
+            app:layout_constraintRight_toLeftOf="@id/playerSplitFifthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <ImageView
+            android:id="@+id/playerSplitFifthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSplitFourthCard"
+            app:layout_constraintRight_toLeftOf="@id/playerSplitSixthCard"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <ImageView
+            android:id="@+id/playerSplitSixthCard"
+            android:layout_width="69dp"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toRightOf="@id/playerSplitFifthCard"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/playerFirstCard"/>
+
+    <!-- Buttons on the bottom of the screen -->
 
     <Button
             android:id="@+id/hitButton"
